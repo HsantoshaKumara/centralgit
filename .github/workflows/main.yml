@@ -1,0 +1,16 @@
+name: My Workflow
+
+on: [push]
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run script with arguments
+        run: |
+          sh my-script.sh $ARG1 $ARG2
+        env:
+          ARG1: "value1"
+          ARG2: "value2"
